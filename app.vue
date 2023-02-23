@@ -1,12 +1,16 @@
+<script setup>
+useHead({
+  titleTemplate: ( titleChunk ) => {
+    return titleChunk ? `${ titleChunk } - My movie site`: 'My movie site' 
+  }
+})
+</script>
 <template>
-  <div>
-    <nav>
-      <NuxtLink to="/">Home</NuxtLink>
-      <NuxtLink to="/movies">Movies</NuxtLink>
-      <NuxtLink to="https://vueschool.io">Vue school</NuxtLink>
-    </nav>
-    <NuxtPage />
-  </div>
+  
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  
 </template>
 <style scoped>
   nav {
