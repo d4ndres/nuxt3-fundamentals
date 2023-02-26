@@ -1,5 +1,5 @@
 <script setup>
-const isLoggedIn = useState('isLoggedIn', () => false)
+const isLoggedIn = useIsLoggedIn()
 
 definePageMeta({
   layout: "plain"
