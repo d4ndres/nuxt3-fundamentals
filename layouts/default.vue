@@ -1,4 +1,9 @@
-<script lang="ts" setup></script>
+
+<script setup>
+
+const isLoggedIn = useState('isLoggedIn', () => false)
+
+</script>
 
 <template>
   <div>
@@ -6,7 +11,8 @@
       <NuxtLink to="/">Home</NuxtLink>
       <NuxtLink to="/movies">Movies</NuxtLink>
       <NuxtLink to="https://vueschool.io">Vue school</NuxtLink>
-      <div>home ron</div>
+      <NuxtLink v-if="!isLoggedIn" to="/login">Login</NuxtLink>
+      <a href="#" v-else @click.prevent="isLoggedIn = false">Logout</a>
     </nav>
     <div>
       <slot></slot>
